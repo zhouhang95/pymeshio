@@ -559,6 +559,9 @@ class BinaryWriter(object):
     def write_vector3(self, v):
         self.ios.write(struct.pack("=3f", v.x, v.y, v.z))
 
+    def write_quaternion(self, q):
+        self.ios.write(struct.pack("=4f", q.x, q.y, q.z, q.w))
+    
     def write_rgb(self, v):
         self.ios.write(struct.pack("=3f", v.r, v.g, v.b))
 

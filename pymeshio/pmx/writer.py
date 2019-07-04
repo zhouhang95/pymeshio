@@ -183,9 +183,11 @@ class Writer(common.BinaryWriter):
                     self.write_vertex_index(o.vertex_index)
                     self.write_vector3(o.position_offset)
             elif m.morph_type==2:
-                # todo
-                raise common.WriteException(
-                        "not implemented BoneMorph")
+                self.write_int(len(m.offsets), 4)
+                for o in m.offsets:
+                    self.write_bone_index(o.bone_index)
+                    self.write_vector3(o.position)
+                    self.write_quaternion(o.rotation)
             elif m.morph_type==3:
                 # todo
                 raise common.WriteException(
