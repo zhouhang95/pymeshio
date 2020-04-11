@@ -439,7 +439,7 @@ class Bdef4(common.Diff):
         self.weight3=weight3
 
     def __str__(self):
-        return "<Bdef4 {0}:{1}, {2}:{3}, {4}:{5}, {6}:{7}>".format(
+        return "<Bdef4 {0}:{4}, {1}:{5}, {2}:{6}, {3}:{7}>".format(
                 self.index0, self.index1, self.index2, self.index3,
                 self.weight0, self.weight1, self.weight2, self.weight3)
 
