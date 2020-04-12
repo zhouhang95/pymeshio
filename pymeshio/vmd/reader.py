@@ -51,8 +51,7 @@ class Reader(common.BinaryReader):
                 frame.euler.x, frame.euler.y, frame.euler.z
                 )=struct.unpack('If3f3f', self.ios.read(32))
         # complement data
-        frame.complement=''.join(
-                ['%x' % x for x in struct.unpack('24B', self.ios.read(24))])
+        frame.complement = struct.unpack('24B', self.ios.read(24))
         (frame.angle, frame.perspective
                 )=struct.unpack('fB', self.ios.read(5))
         return frame
