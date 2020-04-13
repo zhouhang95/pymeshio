@@ -96,7 +96,5 @@ def read(ios):
             for _ in range(reader.unpack('I', 4))]
     motion.cameras=[reader.read_camera_frame() 
             for _ in range(reader.unpack('I', 4))]
-    motion.lights=[reader.read_light_frame() 
-            for _ in range(reader.unpack('I', 4))]
     return motion
 
