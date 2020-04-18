@@ -52,7 +52,7 @@ class Reader(common.BinaryReader):
         # complement data
         frame.complement = struct.unpack('24B', self.ios.read(24))
         (frame.angle, frame.perspective
-                )=struct.unpack('fB', self.ios.read(5))
+                )=struct.unpack('IB', self.ios.read(5))
         return frame
 
 
