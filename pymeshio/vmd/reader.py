@@ -29,8 +29,7 @@ class Reader(common.BinaryReader):
         frame.q.x, frame.q.y, frame.q.z, frame.q.w) = struct.unpack(
                 'I7f', self.ios.read(32))
         # complement data
-        frame.complement=''.join(
-                ['%x' % x for x in struct.unpack('64B', self.ios.read(64))])
+        frame.complement=struct.unpack('64B', self.ios.read(64))
         return frame
 
     def read_morph_frame(self):
